@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Digi Creation Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .dropdown-menu {
+            display: none;
+            background-color: #f8f9fa;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+    
+        .dropdown-link {
+            padding: 12px 16px;
+            display: block;
+            text-decoration: none;
+            color: #343a40;
+        }
+    
+        
+        .dropdown-link:hover {
+            background-color: #007bff;
+            color: white;
+        }
+
+        body {
+        background-image: url('Images/Bg\ Image.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        margin: 0;
+        padding: 0;
+}
+
+.fas.fa-eye {
+    font-size: 1.5em;
+    color: #333; /* Adjust color */
+    margin-right: 10px; /* Space between icon and button */
+}
+
+.fas.fa-eye:hover {
+    color: #007bff; /* Change color on hover */
+}
+
+    </style>
+
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html"><img src="Images/DIGI-STORE logo.png" alt="Digi Logo" /></a>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="shops.html" class="nav-link">Shop</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link">Categories <i class="fas fa-caret-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" class="dropdown-link" data-category="mens"><i class="fas fa-male"></i>Men's Collection</a></li>
+                            <li><a href="#" class="dropdown-link" data-category="womens"><i class="fas fa-female"></i>Women's Collection</a></li>
+                            <li><a href="#" class="dropdown-link" data-category="kids"><i class="fas fa-child"></i>Kid's Collection</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="logout.html" class="nav-link">Logout</a></li>
+                </ul>
+                <div class="cart-icon">
+                    <a href="cart.html"><img src="Images/ADD TO CART.png" alt="Cart"></a>
+                </div>
+            </nav>
+        </div>
+    </header>
+        
+
+            <div style="text-align: center;" class="shop-products">
+                <!-- Men's Products -->
+                <div class="product-category" id="mens">
+                    <h1 class="category-title" style="color: white;"><u>Men's Collection</u></h1>
+                    <div class="product-grid">
+                        
+                        <!-- Product 1: T-shirt -->
+                        <div class="product-card">
+                            <a href="product-details.html?productId=1" class="eye-icon" target="_blank">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                            <img id="product-image-1" src="Images/Men's/T-shirt (1).png" alt="T-shirt">
+                            <div class="color-options">
+                                <span class="color-swatch" style="background-color: #000000;" data-image="Images/Men's/Black T-Shirt (1).png" data-target="product-image-1"></span>
+                                <span class="color-swatch" style="background-color: blue;" data-image="Images/Men's/isolated-blue-t-shirt-free-png (1).png" data-target="product-image-1"></span>
+                            </div>
+                            <h3 class="product-name">T-shirt</h3>
+                            <p class="product-price">$30</p>
+                            <button onclick="addToCart(101, 'T-shirt', 30)">Add to Cart</button>
+                        </div>
+
+                        <div class="product-card">
+                            <a href="product-details.html?productId=2" class="eye-icon" target="_blank">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                            <img id="product-image-2" src="Images/Men's/Apple watch(1).png" alt="Apple watch">
+                            <div class="color-options">
+                                <span class="color-swatch" style="background-color: red;" data-image="Images/Men's/Red-Watch (1).png" data-target="product-image-2"></span>
+                                <span class="color-swatch" style="background-color: black;" data-image="Images/Men's/Black-apple-watch (1).png" data-target="product-image-2"></span>
+                            </div>
+                            <h3 class="product-name">Apple watch</h3>       
+                            <p class="product-price">$80</p>
+                            <button onclick="addToCart(102, 'Apple watch', 80)">Add to Cart</button>
+                        </div>
+
+                        <div class="product-card">
+                            <a href="product-details.html?productId=3" class="eye-icon" target="_blank">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                            <img id="product-image-3" src="Images/Men's/Denim Slim-fit pants (1).png" alt="Denim Pant">
+                            <div class="color-options">
+                                <span class="color-swatch" style="background-color: black;" data-image="Images/Men's/Black pent (1).png" data-target="product-image-3"></span>
+                                <span class="color-swatch" style="background-color: grey;" data-image="Images/Men's/Grey pant (1).png" data-target="product-image-3"></span>
+                            </div>
+                            <h3 class="product-name">Denim Pant</h3>
+                            <p class="product-price">$35</p>
+                            <button onclick="addToCart(103, 'Denim Pant', 35)">Add to Cart</button>
+                        </div>
+
+                        <div class="product-card">
+                            <a href="product-details.html?productId4" class="eye-icon" target="_blank">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                            <img id="product-image-4" src="Images/Men's/Khaki Shoe Leather (1).png" alt="Khaki Shoes">
+                            <div class="color-options">
+                                <span class="color-swatch" style="background-color: brown;" data-image="Images/Men's/brown (1).png" data-target="product-image-4"></span>
+                                <span class="color-swatch" style="background-color: black;" data-image="Images/Men's/black-shoes (1).png" data-target="product-image-4"></span>
+                            </div>
+                            <h3 class="product-name">Khaki Shoes</h3>
+                            <p class="product-price">$48</p>
+                            <button onclick="addToCart(104, 'Khaki Shoes', 48)">Add to Cart</button>
+                            
+                        </div>
+
+                        <div class="product-card">
+                            <a href="product-details.html?productId=5" class="eye-icon" target="_blank">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                            <img id="product-image-5" src="Images/Men's/Leather Wallet.png" alt="Leather wallet">
+                            <div class="color-options">
+                                <span class="color-swatch" style="background-color: black;" data-image="Images/Men's/Black-Wallet (1).png" data-target="product-image-5"></span>
+                                <span class="color-swatch" style="background-color: brown;" data-image="Images/Men's/light brown (1).png" data-target="product-image-5"></span>
+                            </div>
+                            <h3 class="product-name">Leather Wallet</h3>
+                            <p class="product-price">$20</p>
+                            <button onclick="addToCart(105, 'Leather Wallet', 20)">Add to Cart</button>
+                        </div>
+
+                        <div class="product-card">
+                            <a href="product-details.html?productId=6" class="eye-icon" target="_blank">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                            <img id="product-image-6" src="Images/Men's/footwear (1).png" alt="sleeper">
+                            <div class="color-options">
+                                <span class="color-swatch" style="background-color: blue;" data-image="Images/Men's/chappal (1).jpg" data-target="product-image-6"></span>
+                                <span class="color-swatch" style="background-color: yellow;" data-image="Images/Men's/Havai sleeper (1).png " data-target="product-image-6"></span>
+                            </div>
+                            <h3 class="product-name">Sleeper</h3>
+                            <p class="product-price">$8</p>
+                            <button onclick="addToCart(106, 'Sleeper', 8)">Add to Cart</button>
+                        </div>
+
+                        <div class="product-card">
+                            <a href="product-details.html?productId=7" class="eye-icon" target="_blank">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                            <img id="product-image-7" src="Images/Men's/leather belts (1).png" alt="Belt">
+                            <div class="color-options">
+                                <span class="color-swatch" style="background-color: red;" data-image="Images/Men's/red-belt (1).png" data-target="product-image-7"></span>
+                                <span class="color-swatch" style="background-color: brown;" data-image="Images/Men's/Belt.png " data-target="product-image-7"></span>
+                            </div>
+                            <h3 class="product-name">Belt</h3>
+                            <p class="product-price">$5</p>
+                            <button onclick="addToCart(107, 'Belt', 5)">Add to Cart</button>
+                        </div>
+
+                        <!-- Example for the Men's Collection -->
+                        <div class="product-card">
+                            <a href="product-details.html?productId=8" class="eye-icon" target="_blank">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                            <img id="product-image-8" src="Images/Men's/Cap (1).png" alt="Belt">
+                            <div class="color-options">
+                                <span class="color-swatch" style="background-color: black;" data-image="Images/Men's/black-cap (1).png" data-target="product-image-8"></span>
+                                <span class="color-swatch" style="background-color: white;" data-image="Images/Men's/white-cap (1).png " data-target="product-image-8"></span>
+                            </div>
+                            
+                            <h3 class="product-name">Polo Cap</h3>
+                            <p class="product-price">$7</p>
+                            <button onclick="addToCart(108, 'Polo Cap', 7)">Add to Cart</button>
+                        </div>
+
+
+                        <!-- Add more men's products here -->
+                    </div>
+                </div>
+
+                <!-- Women's Products -->
+                <div class="product-category" id="womens" style="display: none;">
+                    <h2 class="category-title" style="color: white;"><u>Women's Collection</u></h2>
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <a href="product-details.html?productId=9" class="eye-icon" target="_blank">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                        <img id="product-image-10" src="Images/Women's/T-shirt Shoulder Sleeve.png" alt="Shoulder Sleeve">
+                        <div class="color-options">
+                            <span class="color-swatch" style="background-color: pink;" data-image="Images/Women's/pink-sleeve(1).png" data-target="product-image-10"></span>
+                            <span class="color-swatch" style="background-color: red;" data-image="Images/Women's/red-sleeve(1).png " data-target="product-image-10"></span>
+                        </div>
+                            <h3 class="product-name">Shoulder Sleeve</h3>
+                            <p class="product-price">$27</p>
+                            <button onclick="addToCart(201, 'Shoulder Sleeve', 27)">Add to Cart</button>
+                        </div>
+
+                        <div class="product-card">
+                            <a href="product-details.html?productId=10" class="eye-icon" target="_blank">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                        <img id="product-image-11" src="Images/Women's/Handbag (1).png" alt="Handbag">
+                        <div class="color-options">
+                            <span class="color-swatch" style="background-color: skyblue;" data-image="Images/Women's/Sky-Blue (1).png" data-target="product-image-11"></span>
+                            <span class="color-swatch" style="background-color: black;" data-image="Images/Women's/Black-Handbag (1).png " data-target="product-image-11"></span>
+                        </div>
+                            <h3 class="product-name">Handbag</h3>
+                            <p class="product-price">$42</p>
+                            <button onclick="addToCart(202, 'Handbag', 42)">Add to Cart</button>
+                        </div>
+
+                        <div class="product-card">
+                            <a href="product-details.html?productId=11" class="eye-icon" target="_blank">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                        <img id="product-image-12" src="Images/Women's/jeans Denim Slim-fit pants (1).png" alt="Jeans Pant">
+                        <div class="color-options">
+                            <span class="color-swatch" style="background-color: lightcyan;" data-image="Images/Women's/jeans colour (1).png" data-target="product-image-12"></span>
+                            <span class="color-swatch" style="background-color: purple;" data-image="Images/Women's/Blue-Pant (1).png " data-target="product-image-12"></span>
+                        </div>
+                            <h3 class="product-name">Denim pant</h3>
+                            <p class="product-price">$29</p>
+                            <button onclick="addToCart(203, 'Denim pant', 29)">Add to Cart</button>
+                        </div>
+
+                        <div class="product-card">
+                            <a href="product-details.html?productId=12" class="eye-icon" target="_blank">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                        <img id="product-image-13" src="Images/Women's/Adidas Shoe Sneakers (1).png" alt="Sneakers">
+                        <div class="color-options">
+                            <span class="color-swatch" style="background-color: pink;" data-image="Images/Women's/Pink-sneakers (1).png" data-target="product-image-13"></span>
+                            <span class="color-swatch" style="background-color: green;" data-image="Images/Women's/Green-sneaker (1).png" data-target="product-image-13"></span>
+                        </div>
+                            <h3 class="product-name">Adidas Sneakers</h3>
+                            <p class="product-price">$150</p>
+                            <button onclick="addToCart(204, 'Adidas Sneakers', 150)">Add to Cart</button>
+                        </div>
+
+                        <div class="product-card">
+                            <a href="product-details.html?productId=13" class="eye-icon" target="_blank">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                            <img id="product-image-14" src="Images/Women's/two gold-colored bangles (1).png" alt="Gold Bangles">
+                        <div class="color-options">
+                            <span class="color-swatch" style="background-color: silver;" data-image="Images/Women's/Bangles (1).png" data-target="product-image-14"></span>
+                        </div>
+                            <h3 class="product-name">Gold Bangles</h3>
+                            <p class="product-price">$600</p>
+                            <button onclick="addToCart(205, 'Gold Bangles', 600)">Add to Cart</button>
+                        </div>
+
+                        <div class="product-card">
+                            <a href="product-details.html?productId=14" class="eye-icon" target="_blank">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                            <img id="product-image-15" src="Images/Women's/Black Heel (1).png" alt="Heel">
+                        <div class="color-options">
+                            <span class="color-swatch" style="background-color: blue;" data-image="Images/Women's/Blue-heel (1).png" data-target="product-image-15"></span>
+                            <span class="color-swatch" style="background-color: red;" data-image="Images/Women's/Red-Heel (1).png" data-target="product-image-15"></span>
+                        </div>
+                            <h3 class="product-name">Heel</h3>
+                            <p class="product-price">$40</p>
+                            <button onclick="addToCart(206, 'Heel', 40)">Add to Cart</button>
+                        </div>
+
+                        <div class="product-card">
+                            <a href="product-details.html?productId=15" class="eye-icon" target="_blank">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                            <img id="product-image-16" src="Images/Women's/Kiev Swatch Clock Bracelet (1).png" alt="Kiev Watch">
+                        <div class="color-options">
+                            <span class="color-swatch" style="background-color: gold;" data-image="Images/Women's/Golden-watch (1).png" data-target="product-image-16"></span>
+                        </div>
+                            <h3 class="product-name">Kiev Watch</h3>
+                            <p class="product-price">$57</p>
+                            <button onclick="addToCart(207, 'Kiev Watch', 57)">Add to Cart</button>
+                        </div>
+
+                        <div class="product-card">
+                            <a href="product-details.html?productId=16" class="eye-icon" target="_blank">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                            <img id="product-image-17" src="Images/Women's/Dress Clothing Red (1).png" alt="Dress">
+                        <div class="color-options">
+                            <span class="color-swatch" style="background-color: yellow;" data-image="Images/Women's/Yellow-dress (1).png" data-target="product-image-17"></span>
+                            <span class="color-swatch" style="background-color: blue;" data-image="Images/Women's/Blue-Dress (1).png" data-target="product-image-17"></span>
+                        </div>
+                            <h3 class="product-name">Dress</h3>
+                            <p class="product-price">$62</p>
+                            <button onclick="addToCart(208, 'Dress', 62)">Add to Cart</button>
+                        </div>
+                        <!-- Add more women's products here -->
+                    </div>
+                </div>
+
+                <!-- ---------------------------------------------------------Kid's Products---------------------------------------------- -->
+                <div class="product-category" id="kids" style="display: none;">
+                    <h2 class="category-title" style="color: white;"><u>Kid's Collection</u></h2>
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <a href="product-details.html?productId=17" class="eye-icon" target="_blank">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                            <img id="product-image-21" src="Images/kid's/Baby Gift Box.png" alt="Gift-Box">
+                        <div class="color-options">
+                            <span class="color-swatch" style="background-color: white;" data-image="Images/Kid's/Green-Shirt (1).png" data-target="product-image-21"></span>
+                        </div>
+                            <h3 class="product-name">Gift Box</h3>
+                            <p class="product-price">$20</p>
+                            <button onclick="addToCart(201, 'Gift Box', 20)">Add to Cart</button>
+                        </div>
+
+                        <div class="product-card">
+                            <a href="product-details.html?productId=18" class="eye-icon" target="_blank">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                            <img id="product-image-22" src="Images/kid's/T-shirt.png" alt="Shirt">
+                        <div class="color-options">
+                            <span class="color-swatch" style="background-color: green;" data-image="Images/Kid's/Green-Shirt (1).png" data-target="product-image-22"></span>
+                            <span class="color-swatch" style="background-color: pink;" data-image="Images/Kid's/Pink-Shirt (1).png" data-target="product-image-22"></span>
+                        </div>
+                            <h3 class="product-name">Shirt</h3>
+                            <p class="product-price">$15</p>
+                            <button onclick="addToCart(202, 'Shirt', 15)">Add to Cart</button>
+                        </div>
+
+                        <div class="product-card">
+                            <a href="product-details.html?productId=19" class="eye-icon" target="_blank">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                            <img id="product-image-23" src="Images/kid's/toys (1).png" alt="Kids Toys">
+                            <div class="color-options">
+                                <span class="color-swatch" style="background-color: whitesmoke;" data-image="Images/Kid's/Green-Shirt (1).png" data-target="product-image-23"></span>
+                            </div>
+                            <h3 class="product-name">Kids Toy</h3>
+                            <p class="product-price">$30</p>
+                            <button onclick="addToCart(203, 'Kids Toy', 30)">Add to Cart</button>
+                        </div>
+
+                        <div class="product-card">
+                            <a href="product-details.html?productId=20" class="eye-icon" target="_blank">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                            <img id="product-image-24" src="Images/kid's/Baby Socks (1).png" alt="Baby Socks">
+                            <div class="color-options">
+                                <span class="color-swatch" style="background-color: purple;" data-image="Images/Kid's/Purple-socks (1).png" data-target="product-image-24"></span>
+                                <span class="color-swatch" style="background-color: red;" data-image="Images/Kid's/Red-Socks (1).png" data-target="product-image-24"></span>
+                            </div>
+                            <h3 class="product-name">Baby Socks</h3>
+                            <p class="product-price">$22</p>
+                            <button onclick="addToCart(204, 'Baby Sock', 22)">Add to Cart</button>
+                        </div>
+
+                        <div class="product-card">
+                            <a href="product-details.html?productId=21" class="eye-icon" target="_blank">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                            <img id="product-image-25" src="Images/kid's/Baby Shoes.png" alt="Baby Shoes">
+                            <div class="color-options">
+                                <span class="color-swatch" style="background-color: black;" data-image="Images/Kid's/Black-shoes (1).png" data-target="product-image-25"></span>
+                                <span class="color-swatch" style="background-color: brown;" data-image="Images/Kid's/Brown-Shoes (1).png" data-target="product-image-25"></span>
+                            </div>
+                            <h3 class="product-name">Baby Shoes</h3>
+                            <p class="product-price">$36</p>
+                            <button onclick="addToCart(205, 'Baby Shoes', 36)">Add to Cart</button>
+                        </div>
+
+                        <div class="product-card">
+                            <a href="product-details.html?productId=22" class="eye-icon" target="_blank">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                            <img id="product-image-26" src="Images/kid's/Milk Baby bottle (1).png" alt="Milk Baby bottle">
+                            <div class="color-options">
+                                <span class="color-swatch" style="background-color: whitesmoke;" data-image="Images/Kid's/Green-Shirt (1).png" data-target="product-image-26"></span>
+                            </div>
+                            <h3 class="product-name">Milk Baby bottle</h3>
+                            <p class="product-price">$5</p>
+                            <button onclick="addToCart(306, 'Milk Baby bottle', 5)">Add to Cart</button>
+                        </div>
+
+                        <div class="product-card">
+                            <a href="product-details.html?productId=23" class="eye-icon" target="_blank">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                            <img id="product-image-27" src="Images/kid's/Walkers (1).png" alt="Baby Walker">
+                            <div class="color-options">
+                                <span class="color-swatch" style="background-color: orange;" data-image="Images/Kid's/orange-walker (1).png" data-target="product-image-27"></span>
+                                <span class="color-swatch" style="background-color: green;" data-image="Images/Kid's/Green-Walker (1).png" data-target="product-image-27"></span>
+                            </div>
+                            <h3 class="product-name">Baby Walker</h3>
+                            <p class="product-price">$120</p>
+                            <button onclick="addToCart(307, 'Baby Walker', 120)">Add to Cart</button>
+                        </div>
+
+                        <div class="product-card">
+                            <a href="product-details.html?productId=24" class="eye-icon" target="_blank">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                            <img id="product-image-28" src="Images/kid's/Shorts (1).png" alt="Shorts">
+                            <div class="color-options">
+                                <span class="color-swatch" style="background-color: blue;" data-image="Images/Kid's/Blue-short (1).png" data-target="product-image-28"></span>
+                                <span class="color-swatch" style="background-color: black;" data-image="Images/Kid's/Black-short (1).png" data-target="product-image-28"></span>
+                            </div>
+                            <h3 class="product-name">Shorts</h3>
+                            <p class="product-price">$28</p>
+                            <button onclick="addToCart(308, 'Short', 28)">Add to Cart</button>
+                        </div>
+                        <!-- Add more kids' products here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; Digi Creation Store. All rights reserved.</p>
+        </div>
+    </footer>
+    
+
+    <br>
+    <script src="cart.js"></script>
+    <script src="script.js"></script>
+    
+    <script>  
+        // Function to hide all dropdown menus
+        function hideDropdownMenus() {
+            document.querySelectorAll('.dropdown-menu').forEach(menu => {
+                menu.style.display = 'none';
+            });
+        }
+    
+        // Dropdown Menu Functionality
+        document.querySelectorAll('.dropdown-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault(); // Prevent default link behavior
+                const category = this.getAttribute('data-category');
+                
+                // Hide all product categories
+                document.querySelectorAll('.product-category').forEach(categoryDiv => {
+                    categoryDiv.style.display = 'none';
+                });
+                
+                // Show the selected category
+                document.getElementById(category).style.display = 'block';
+                
+                // Hide the dropdown menu
+                hideDropdownMenus();
+            });
+        });
+    
+        // Dropdown Menu Toggle
+        document.querySelectorAll('.dropdown').forEach(dropdown => {
+            const link = dropdown.querySelector('.nav-link');
+            const menu = dropdown.querySelector('.dropdown-menu');
+            
+            link.addEventListener('click', function(e) {
+                e.preventDefault(); // Prevent default link behavior
+                const isVisible = menu.style.display === 'block';
+                
+                // Hide all dropdown menus
+                hideDropdownMenus();
+                
+                // Show the clicked dropdown menu if it was not already visible
+                if (!isVisible) {
+                    menu.style.display = 'block';
+                }
+            });
+        });
+    
+        // Hide dropdown menus when clicking outside of them
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.dropdown')) {
+                hideDropdownMenus();
+            }
+        });
+    
+        // Hide dropdown menus on page load
+        window.onload = function() {
+            hideDropdownMenus();
+        };
+     
+    </script>
+
+    
+</body>
+</html>

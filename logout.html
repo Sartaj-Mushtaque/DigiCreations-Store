@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout Page</title>
+    <link rel="stylesheet" href="s">
+</head>
+<body>
+    <div class="logout-container">
+        <div class="logout-box">
+            <h1>You have been logged out successfully!</h1>
+            <button onclick="logout()" class="logout-btn">Login</button>
+        </div>
+    </div>
+
+    <!-- JavaScript for logout functionality -->
+    <script>
+        function logout() {
+            // Perform any necessary logout actions (e.g., clear session storage)
+            // Redirect to login page
+            window.location.href = "login.html";
+        }
+    </script>
+</body>
+</html>

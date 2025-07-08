@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Digi Creations Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* -----------------------Animation Styles---------------- */
+        .promo-banner {
+            font-size: large;
+            color: yellow;
+            padding: 15px;
+            text-align: center;
+            font-size: 25px;
+            font-weight: bold;
+            margin: 5px auto;
+            width: 50%;
+            animation: fadeInOut 3s ease-in-out infinite;
+        }
+
+        @keyframes fadeInOut {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            50% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html"><img src="Images/DIGI-STORE logo.png" alt="Digi Logo" /></a>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="shops.html" class="nav-link">Shop</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="logout.html" class="nav-link">Logout</a></li>
+                </ul>
+                <form id="search-form" action="search.html" method="get">
+                    <input type="text" id="search-input" name="query" placeholder="Search..." />
+                </form>
+                <div class="cart-icon">
+                    <a href="cart.html"><img src="Images/ADD TO CART.png" alt="Cart"></a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="promo-banner">
+                Get 50% OFF on your first purchase!
+            </div>
+            <div class="hero-content">
+                <h1 style="color: white;" class="hero-title">Discover the World's Best Products</h1>
+                <a href="shops.html" class="btn-primary">Start Shopping</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured-products">
+        <div class="container">
+            <h2 class="section-title">Featured Products</h2>
+            <div class="product-grid">
+                
+                <div class="product-card">
+                    <img src="Images/Feature watch (1).png" alt="Smart Watch">
+                    <div class="star-rating">
+                        <span class="rating-number">5.0</span>
+                        <span class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </span>
+                    </div>
+                    <div class="layer">
+                        <h3>70% OFF</h3>
+                    </div>
+                    <h3 class="product-name">Smart Watch</h3>
+                    <p class="product-price">$16.05</p> 
+                    <button onclick="addToCart(10, 'Smart Watch', 16.05)">Add to Cart</button> 
+                </div>
+                
+                
+                <div class="product-card">
+                    <img src="Images/Airpods pro (1).jpg" alt="Airpods pro">
+                    <div class="star-rating">
+                        <span class="rating-number">4.5</span>
+                        <span class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </span>
+                    </div>
+                    <h3 class="product-name">Airpods pro</h3>
+                    <div class="layer">
+                        <h3>50% OFF</h3>
+                    </div>
+                    <p class="product-price">$42.00</p> 
+                    <button onclick="addToCart(20, 'Airpods pro', 42.00)">Add to Cart</button> 
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <img src="Images/Leather Jacket (1).jpg" alt="Leather Jacket">
+                    <div class="star-rating">
+                        <span class="rating-number">5.0</span>
+                        <span class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </span>
+                    </div>
+                    <h3 class="product-name">Leather Jacket</h3>
+                    <div class="layer">
+                        <h3>60% OFF</h3>
+                    </div>
+                    <p class="product-price">$28.00</p> 
+                    <button onclick="addToCart(30, 'Leather Jacket', 28.00)">Add to Cart</button> 
+                </div>
+                
+                
+                <div class="product-card">
+                    <img src="Images/White sneeker (1).jpg" alt="White sneeker">
+                    <div class="star-rating">
+                        <span class="rating-number">4.0</span>
+                        <span class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </span>
+                    </div>
+                    <h3 class="product-name">White sneeker</h3>
+                    <div class="layer">
+                        <h3>25% OFF</h3>
+                    </div>
+                    <p class="product-price">$12.98</p> 
+                    <button onclick="addToCart(40, 'White sneeker',12.98)">Add to Cart</button> 
+                </div>
+
+                
+                <div class="product-card">
+                    <img src="Images/Gold Necklace (1).jpg" alt="Gold Necklace">
+                    <div class="star-rating">
+                        <span class="rating-number">4.5</span>
+                        <span class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </span>
+                    </div>
+                    <h3 class="product-name">Gold Necklace</h3>
+                    <div class="layer">
+                        <h3>80% OFF</h3>
+                    </div>
+                    <p class="product-price">$122.50</p> 
+                    <button onclick="addToCart(50, 'Gold Necklace', 122.50)">Add to Cart</button> 
+                </div>
+<!-- ---------------extra item---------------- -->
+            <!---<div class="product-card">
+            <img src="Pics/VR- Glasses.jpg" alt="VR Glasses">
+            <div class="star-rating">
+                <span class="rating-number">4.5</span>
+                <span class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </span>
+            </div>
+            <h3 class="product-name">VR Glasses</h3>
+            <div class="layer">
+                <h3>15% OFF</h3>
+            </div>
+            <p class="product-price">$450.50</p> 
+            <!-- <button onclick="addToCart(60, 'VR Glasses', 450.50)">Add to Cart</button> Changed to dollars -->
+        <!-- </div> -->
+        
+    </div>
+    </div>
+    </section>
+
+    <!-- ---------------------- Benefits Section --------------------------- -->
+<section class="benefits">
+    <div class="container">
+        <div class="benefit-box">
+            <i class="fas fa-truck"></i>
+            <h3>Free Shipping</h3>
+            <p>Enjoy free shipping on all orders over $50.</p>
+        </div>
+        <div class="benefit-box">
+            <i class="fas fa-sync-alt"></i>
+            <h3>Easy Returns</h3>
+            <p>30-day hassle-free returns on all purchases.</p>
+        </div>
+        <div class="benefit-box">
+            <i class="fas fa-star"></i>
+            <h3>Member Discounts</h3>
+            <p>Exclusive discounts for our members.</p>
+        </div>
+        <div class="benefit-box">
+            <i class="fas fa-headset"></i>
+            <h3>Customer Support</h3>
+            <a href="product-details.html?productId=21" class="eye-icon" target="_blank"></a>
+            <p><a href="contact.html" class="contact-link" target="_blank">24/7 support to assist with any inquiries.</a></p>
+
+        </div>
+    </div>
+</section>
+
+
+    <!-- ----------------- About Section --------------------------- -->
+    <section class="about">
+        <div class="container">
+    <div class="about-links">
+        <div class="links-column">
+            <h4>Company</h4>
+            <ul>
+                <li><a href="#">All Departments</a></li>
+                <li><a href="#">Store Directory</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Our Company</a></li>
+                <li><a href="#">Sell on Digi Creations</a></li>
+            </ul>
+        </div>
+        <div class="links-column">
+            <h4>Support</h4>
+            <ul>
+                <li><a href="#">Help</a></li>
+                <li><a href="#">Product Recalls</a></li>
+                <li><a href="#">Accessibility</a></li>
+                <li><a href="#">Tax Exempt Program</a></li>
+                <li><a href="#">Safety Data Sheet</a></li>
+            </ul>
+        </div>
+        <div class="links-column">
+            <h4>Policies</h4>
+            <ul>
+                <li><a href="#">Terms of Use</a></li>
+                <li><a href="#">Privacy & Security</a></li>
+                <li><a href="#">Pakistan Supply Chain Act</a></li>
+                <li><a href="#">Privacy Choices</a></li>
+                <li><a href="#">Notice at Collection</a></li>
+            </ul>
+        </div>
+        <div class="links-column">
+            <h4>Services</h4>
+            <ul>
+                <li><a href="#">Get the Digi Creation App</a></li>
+                <li><a href="#">Sign-up for Email</a></li>
+                <li><a href="#">Pharmacy</a></li>
+                <li><a href="#">Digi Creations Business</a></li>
+                <li><a href="#">Delete Account</a></li>
+            </ul>
+        </div>
+    </div>
+
+   <!-- -------------------Social Media Icons------------------------- -->
+    <div class="icons">
+        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+</div>
+</section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; Digi Creations Store. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <br>
+    <script src="cart.js"></script>
+
+    <script>
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const layer = this.querySelector('.layer');
+                layer.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

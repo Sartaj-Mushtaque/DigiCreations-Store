@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>product-details</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<style>
+     body {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    min-height: 100vh; /* Ensures body takes up full height of the viewport */
+    background-image: url('pics/product-details.jpg'); /* Background image */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    margin: 0; /* Removes any default body margin */
+}
+
+.product-details {
+    max-width: 500px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+
+.product-details img {
+    width: 40%; 
+    height: auto;
+    border-radius: 8px;
+    margin: 0 auto; 
+    display: block; 
+    margin-bottom: 10px;
+}
+
+.product-details h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.product-details p {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.product-details select {
+    font-size: 1em;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 200px;
+}
+
+.product-details button {
+    font-size: 1em;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.product-details button:hover {
+    background-color: #0056b3;
+}
+
+
+</style>
+<body>
+    <div id="product-details" class="product-details"></div>
+
+    <script>
+        const products = {
+            1: {
+                name: 'T-shirt',
+                image: "Images/Men's/T-shirt (1).png",
+                description: 'Elevate your casual wardrobe with our Men\'s Classic Cotton T-Shirt.',
+                Material: '100% premium cotton',
+                Fit: 'Classic fit for ease of movement',
+                Care: 'Instructions: Machine washable for easy maintenance',
+                sizes: ['Small', 'Medium', 'Large']
+            },
+            2: {
+                name: 'Watch',
+                image: "Images/Men's/Apple watch(1).png",
+                description: ' Upgrade your wrist game with our Stylish Smartwatch. Crafted from durable stainless steel, it combines elegance with functionality.',
+                Material: 'Stainless steel, Rubber',
+                Fit: 'Adjustable strap for comfortable wear',
+                Care: 'Wipe with a soft, dry cloth to keep clean. Avoid water and chemicals. Store in a cool, dry place.',
+                sizes: ['One size']
+            },
+            3: {
+                name: 'Denim Pant',
+                image: "Images/Men's/Denim Slim-fit pants (1).png",
+                description: 'Elevate your casual wardrobe with our Denim Pant.',
+                Material: '100% premium denim for durability and style',
+                Fit: 'Classic fit with a modern cut for a comfortable, stylish look',
+                Care: 'Machine wash cold with like colors. Tumble dry low or hang to dry. Iron on medium heat if needed. Avoid bleach.',
+                sizes: ['Small', 'Medium', 'Large']
+            },
+            4: {
+                name: 'Khaki Shoes',
+                image: "Images/Men's/Khaki Shoe Leather (1).png",
+                description: ' Step up your footwear game with our Khaki Shoes, designed for both style and comfort. Made from high-quality materials.',
+                Material: 'High-quality synthetic and textile for durability and comfort',
+                Fit: 'Designed for a comfortable, snug fit',
+                Care: 'Wipe clean with a damp cloth. For deeper cleaning, use a mild soap solution and a soft brush. Allow to air dry. Avoid direct heat sources.',
+                sizes: ['Medium', 'Large']
+            },
+
+
+            // ----------------------------------------------Women's Collection------------------------------------------
+            9: {
+                name: 'Shoulder Sleeve',
+                image: "Images/Women's/T-shirt Shoulder Sleeve.png",
+                description: 'Enhance your wardrobe with our Shoulder Sleeve, crafted for a perfect blend of style and functionality.',
+                Material: 'Premium fabric blend for comfort and durability',
+                Fit: 'Designed to fit comfortably over your shoulders with adjustable features for a custom fit',
+                Care: 'Hand wash in cold water with mild detergent. Lay flat to dry. Avoid wringing or twisting. Iron on low heat if needed.',
+                sizes: ['Small', 'Medium', 'Large']
+            },
+            10: {
+                name: 'HandBag',
+                image: "Images/Women's/Handbag (1).png",
+                description: ' Elevate your style with our elegant Ladies Handbag. Designed with both functionality and fashion in mind, this handbag features a sleek silhouette and premium stuff.',
+                Material: 'High-quality leather with durable stitching for long-lasting use.',
+                Fit: 'Spacious interior with multiple compartments to keep your essentials organized and accessible',
+                Care: 'Wipe clean with a damp cloth. For deeper cleaning, use a leather cleaner. Avoid direct sunlight and store in a cool, dry place.',
+                sizes: ['Small', 'Medium', 'Large']
+            },
+            11: {
+                name: 'Jeans Pant',
+                image: "Images/Women's/jeans Denim Slim-fit pants (1).png",
+                description: ' Upgrade your casual wardrobe with our versatile Jeans Pant. Crafted from high-quality denim, these jeans offer both comfort and durability',
+                Material: '100% premium denim for durability and a perfect fit',
+                Fit: ' Classic cut with a modern finish, offering a comfortable yet stylish look.',
+                Care: 'Machine wash in cold water with similar colors. Tumble dry on low or hang to dry. Iron on medium heat if needed. Avoid using bleach',
+                sizes: ['Small', 'Medium', 'Large']
+            },
+            12: {
+                name: 'Sneakers',
+                image: "Images/Women's/Adidas Shoe Sneakers (1).png",
+                description: ' Step up your style with our sleek and versatile Sneakers. Designed for both performance and fashion, these sneakers feature a comfortable fit and modern design.',
+                Material: 'Durable mesh and synthetic materials for breathability and support',
+                Fit: 'Spacious interior with multiple compartments to keep your essentials organized and accessible',
+                Care: 'Wipe clean with a damp cloth. For deeper cleaning, use a leather cleaner. Avoid direct sunlight and store in a cool, dry place',
+                sizes: ['Small', 'Medium', 'Large']
+            },
+
+            // ---------------------------Kid's (Last 4 Items)--------------------------------------
+            21: {
+                name: 'Baby Shoes',
+                image: "Images/kid's/Baby Shoes.png",
+                description: ' Keep your little one feet cozy and stylish with our Baby Shoes. Crafted with soft, flexible materials, these shoes are designed to support healthy foot development while offering adorable designs.',
+                Material: 'Soft, breathable fabric and flexible soles to ensure comfort and ease of movement',
+                Fit: 'Gentle fit with adjustable closures to ensure a secure and comfortable fit for tiny feet',
+                Care: 'Hand wash with mild detergent. Air dry completely before use. Avoid exposing to direct sunlight or heat',
+                sizes: ['Small', 'Medium', 'Large']
+            },
+            22: {
+                name: 'Milk Baby bottle',
+                image: "Images/kid's/Milk Baby bottle (1).png",
+                description: ' The Milk Baby Bottle is designed to make feeding time easy and enjoyable for both you and your little one.',
+                Material: 'Made from BPA-free, durable plastic that is safe for your baby and resistant to breakage',
+                Fit: 'Ergonomically designed for a comfortable grip and easy handling, with a secure screw-on cap to prevent spills',
+                Care: 'Wash before first use and after each use with warm, soapy water. Safe for top-rack dishwasher use. Sterilize regularly for added safety. Avoid microwave sterilization',
+                sizes: ['Small', 'Medium', 'Large']
+            },
+            23: {
+                name: 'Baby Walker',
+                image: "Images/kid's/Walkers (1).png",
+                description: ' The Baby Walker is a perfect companion for your little one as they take their first steps.',
+                Material: 'Constructed from durable, non-toxic materials with a soft, washable seat cover for added convenience',
+                Fit: 'Adjustable to accommodate your growing baby, with a secure harness system to keep them safely in place',
+                Care: 'Wipe clean with a damp cloth. Spot clean the seat cover or machine wash as needed. Avoid submerging in water or using harsh chemicals. Ensure all parts are dry before reassembling',
+                sizes: ['Small', 'Medium', 'Large']
+            },
+            24: {
+                name: 'Short',
+                image: "Images/kid's/Shorts (1).png",
+                description: ' Comfortable and versatile, these shorts are perfect for casual wear. Made with breathable fabric for all-day comfort, they feature a relaxed fit and adjustable waistband.',
+                Material: '100% soft cotton or a blend for durability and comfort',
+                Fit: 'Relaxed fit with an adjustable waistband for a customizable fit',
+                Care: 'Machine washable. Tumble dry low or hang to dry. Iron on low if needed',
+                sizes: ['Small', 'Medium', 'Large']
+            },
+        };
+
+        // Get productId from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('productId');
+        const product = products[productId];
+
+        if (product) {
+            // Display product details
+            document.getElementById('product-details').innerHTML = `
+                <img src="${product.image}" alt="${product.name}">
+                <h2>${product.name}</h2>
+                <p>${product.description}</p>
+                <p><b>Material:</b> ${product.Material}</p>
+                <p><b>Fit:</b> ${product.Fit}</p>
+                <p><b>Care:</b> ${product.Care}</p>
+                <select name="size">
+                    ${product.sizes.map(size => `<option value="${size}">${size}</option>`).join('')}
+                </select>
+            `;
+        } else {
+            document.getElementById('product-details').innerHTML = '<p>Product not found!</p>';
+        }
+    </script>
+    
+</body>
+</html>
